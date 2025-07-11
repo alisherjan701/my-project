@@ -2,8 +2,8 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white  py-9  h-[200px]">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 ">
+    <footer className="bg-gray-900 text-white py-10 mt-8">
+      <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
         <div>
           <h2 className="text-xl font-bold mb-4">Вкус, который объединяет!</h2>
           <div className="flex flex-col gap-2">
@@ -19,11 +19,11 @@ const Footer = () => {
           </div>
         </div>
 
-        <div></div>
+        <div className="hidden md:block" />
 
         <div>
           <h3 className="font-semibold mb-3">Информация</h3>
-          <ul className="space-y-1">
+          <ul className="space-y-2">
             <li>
               <a href="#" className="hover:underline">
                 О нас
@@ -36,15 +36,15 @@ const Footer = () => {
             </li>
             <li>
               <a href="#" className="hover:underline">
-                Акци
+                Акции
               </a>
             </li>
           </ul>
         </div>
 
-        <div className="w-[200px] h-[200px]">
+        <div>
           <h3 className="font-semibold mb-3">Следите за нами</h3>
-          <div>
+          <ul className="space-y-2">
             <li>
               <a href="#" className="hover:underline">
                 Доставка и оплата
@@ -60,7 +60,7 @@ const Footer = () => {
                 Присоединяйтесь к нашей команде
               </a>
             </li>
-          </div>
+          </ul>
         </div>
       </div>
     </footer>

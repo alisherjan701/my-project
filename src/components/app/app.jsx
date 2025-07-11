@@ -3,8 +3,8 @@ import { Route, Routes } from "react-router-dom";
 import Main from "../main/main";
 import Footer from "../footer/footer";
 import Navbar from "../navbar/navbar";
-import Hero from "../hero/hero";
 import Card from "../card/card";
+
 
 function App() {
   return (
