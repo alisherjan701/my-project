@@ -1,8 +1,13 @@
 import React from 'react'
+import Card from '../card/card'
+import SimpleSlider from '../simpleSlider/simpleSlider'
 
 function Main() {
   return (
-    <div>Main</div>
+    <div>
+      <SimpleSlider/>
+      <Card/>
+    </div>
   )
 }
 
