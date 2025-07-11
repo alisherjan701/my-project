@@ -12,7 +12,7 @@ export default function SimpleSlider() {
     slidesToScroll: 1,
   };
   return (
-    <Slider {...settings}>
+    <Slider className="bg-amber-100" {...settings}>
       <div>
         <h3>1</h3>
       </div>

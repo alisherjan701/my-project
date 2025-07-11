@@ -16,7 +16,7 @@ const products = [
       uz: "An'anaviy kashta bilan bezatilgan nafis ipak ko'ylak"
     },
     price: "$299",
-    image: "https://images.pexels.com/photos/5588018/pexels-photo-5588018.jpeg?auto=compress&cs=tinysrgb&w=600"
+    image: ""
   },
   {
     id: 2,
@@ -31,7 +31,7 @@ const products = [
       uz: "Oltin ip bilan bezatilgan dabdabali marosim kiyimi"
     },
     price: "$459",
-    image: "https://images.pexels.com/photos/8815909/pexels-photo-8815909.jpeg?auto=compress&cs=tinysrgb&w=600"
+    image: ""
   },
   {
     id: 3,
@@ -46,7 +46,7 @@ const products = [
       uz: "An'anaviy suzani naqshlari bilan qo'lda tikilgan nimcha"
     },
     price: "$189",
-    image: "https://images.pexels.com/photos/6765371/pexels-photo-6765371.jpeg?auto=compress&cs=tinysrgb&w=600"
+    image: ""
   },
   {
     id: 4,
@@ -61,7 +61,7 @@ const products = [
       uz: "An'anaviy naqshlar bilan bezatilgan premium ipak ro'mol"
     },
     price: "$79",
-    image: "https://images.pexels.com/photos/5849573/pexels-photo-5849573.jpeg?auto=compress&cs=tinysrgb&w=600"
+    image: ""
   }
 ];
 
@@ -86,7 +86,7 @@ const Card = () => {
   };
 
   return (
-    <div className="p-8 bg-gradient-to-br from-orange-50 to-amber-100 min-h-screen">
+    <div className="p-8 bg-[] from-orange-50 to-amber-100 min-h-screen">
       <div className="flex justify-end mb-6 space-x-2">
         {['en', 'ru', 'uz'].map((lang) => (
           <button
