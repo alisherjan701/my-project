@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import SimpleSlider from "../SimpleSlider/SimpleSlider";
 
 function Main() {
   return (
-    <div>Main</div>
-  )
+    <div>
+      <SimpleSlider />
+    </div>
+  );
 }
 
-export default Main
+export default Main;
