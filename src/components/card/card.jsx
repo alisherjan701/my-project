@@ -1,38 +1,38 @@
 import React, { useState } from "react";
 
-export default function Cart() {
+export default function Card() {
   const pizzas = [
     {
       id: 1,
-      name: "Пиццаdcsdcds №1",
-      description: "Вкусная пицца",
-      price: 32000,
+      name: "",
+      description: "",
+      price: "$48.99 | 5.0 ✮",
       image:
-        "https://api.choparpizza.uz/storage/products/2022/03/03/73AnQv1ZoGkpj7BN0Q0hFYj00esnvM9gk3nb6GzN.webp",
+        "https://i.pinimg.com/736x/ed/78/04/ed78047983d58a91bcb5a0f8156eaabd.jpg",
     },
     {
       id: 2,
-      name: "Сола №2",
-      description: "1 литр",
-      price: 11000,
+      name: "",
+      description: "",
+      price: "$39. | 4.9 ✮",
       image:
-        "https://api.choparpizza.uz/storage/products/2021/09/27/FOI4bE1lWcp2mBxBLGsO80NkI4hPBCrtTDmxc6Zw.webp",
+        "https://i.pinimg.com/474x/0e/a0/0b/0ea00bbb5663a8b145df2e97f940e2d0.jpg",
     },
     {
       id: 3,
-      name: "Фанта №3",
-      description: "1 ",
-      price: 11000,
+      name: "",
+      description: " ",
+      price: "$42.99 | 4.8 ✮",
       image:
-        "https://api.choparpizza.uz/storage/products/2021/12/18/EkAH6GzYTD4bIdwnc5oMsQku14shf4HLCyMaIRDI.png",
+        "https://i.pinimg.com/236x/11/83/72/118372ba2f6922ee77b0de1da3d0c262.jpg",
     },
     {
       id: 4,
-      name: "Пицца №4",
-      description: "Сырная пицца",
-      price: 34000,
+      name: "",
+      description: "Gray Solid Padded Jacket",
+      price: "$32.99 | 4.7 ✮",
       image:
-        "https://api.choparpizza.uz/storage/products/2023/07/31/GFEUGsUkKcjn7sJXPUVQte4qAHaIWUKPcHc5ApDP.webp",
+        "https://i.pinimg.com/236x/2d/e6/5d/2de65d4bce51e7b43a2abe6169571a45.jpg",
     },
   ];
 
@@ -40,14 +40,6 @@ export default function Cart() {
   const [showCartModal, setShowCartModal] = useState(false);
   const [showOrderForm, setShowOrderForm] = useState(false);
   const [formData, setFormData] = useState({ name: "", phone: "", email: "" });
-
-  const handleAddToCart = (pizza) => {
-    setCart((prev) => {
-      const count = prev[pizza.id]?.count || 0;
-      return { ...prev, [pizza.id]: { pizza, count: count + 1 } };
-    });
-    setShowCartModal(true);
-  };
 
   const handleRemoveFromCart = (id) => {
     const updated = { ...cart };
@@ -93,12 +85,6 @@ export default function Cart() {
             <p style={styles.price}>
               {pizza.price.toLocaleString("ru-RU")} сум
             </p>
-            <button
-              style={styles.orderButton}
-              onClick={() => handleAddToCart(pizza)}
-            >
-              🛒 Заказать
-            </button>
           </div>
         ))}
       </div>
@@ -218,7 +204,8 @@ const styles = {
     justifyContent: "center",
   },
   card: {
-    width: "220px",
+    width: "250px",
+    height: "350px",
     background: "#fff",
     borderRadius: "10px",
     padding: "15px",
@@ -227,7 +214,7 @@ const styles = {
   },
   image: {
     width: "100%",
-    height: "140px",
+    height: "240px",
     objectFit: "cover",
     borderRadius: "8px",
   },
@@ -236,8 +223,7 @@ const styles = {
     margin: "10px 0",
   },
   orderButton: {
-    backgroundColor: "#28a745",
-    color: "#fff",
+    color: "#28a745",
     border: "none",
     padding: "10px",
     width: "100%",

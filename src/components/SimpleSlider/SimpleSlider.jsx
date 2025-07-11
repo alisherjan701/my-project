@@ -14,22 +14,22 @@ export default function SimpleSlider() {
   return (
     <Slider {...settings}>
       <div>
-        <h3>1</h3>
+        <img src="4d0d253761106eae8952c2eb38ae179a.jpg" alt="" />
       </div>
       <div>
-        <h3>2</h3>
+        <img src="52fd06a93bca22b11f7896e223107af8.jpg" alt="" />
       </div>
       <div>
-        <h3>3</h3>
+        <img src="jizzax-1-680x361-680x361.jpg" alt="" />
       </div>
       <div>
-        <h3>4</h3>
+        <img src="932b51ab3cabde19d3eb862a9b34799d.jpg" alt="" />
       </div>
       <div>
-        <h3>5</h3>
+        <img src="O'zbek_milliy_kiyimlari_(ansambl)_40.jpg" alt="" />
       </div>
       <div>
-        <h3>6</h3>
+        <img src="370.jpg" alt="" />
       </div>
     </Slider>
   );

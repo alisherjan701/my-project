@@ -1,1 +1,6 @@
 @import "tailwindcss";
+.toggle:hover {
+  transform: translateY(-10px);
+  box-shadow: none;
+  transition: 800ms;
+}
