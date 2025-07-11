@@ -38,7 +38,7 @@ const Card1 = () => {
         <div className="relative flex flex-col rounded-2xl bg-white shadow-2xl toggle max-w-xs w-full">
           <div className="relative overflow-hidden rounded-2xl bg-transparent">
             <img
-              src=""
+              src="https://i.pinimg.com/1200x/30/bd/2f/30bd2fd26f94df860f94bfd3d32535af.jpg"
               alt="ui/ux review check"
               className="w-[95%] rounded-2xl mx-auto mt-4 h-[400px] object-cover"
             />

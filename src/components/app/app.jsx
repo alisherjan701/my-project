@@ -4,6 +4,7 @@ import Main from "../main/main";
 import Footer from "../footer/footer";
 import Navbar from "../navbar/navbar";
 import Hero from "../hero/hero";
+import Card from "../card/card";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Main />} />
+        <Route path="/card" element={<Card />} />
       </Routes>
 
       <Footer />
