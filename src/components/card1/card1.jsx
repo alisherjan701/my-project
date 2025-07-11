@@ -38,7 +38,7 @@ const Card1 = () => {
         <div className="relative flex flex-col rounded-2xl bg-white shadow-2xl toggle max-w-xs w-full">
           <div className="relative overflow-hidden rounded-2xl bg-transparent">
             <img
-              src="https://i.pinimg.com/1200x/96/47/da/9647da0f8759fd33831989c626e4c96b.jpg"
+              src=""
               alt="ui/ux review check"
               className="w-[95%] rounded-2xl mx-auto mt-4 h-[400px] object-cover"
             />
@@ -100,7 +100,7 @@ const Card1 = () => {
         <div className="relative flex flex-col rounded-2xl bg-white shadow-2xl toggle max-w-xs w-full">
           <div className="relative overflow-hidden rounded-2xl bg-transparent">
             <img
-              src="https://i.pinimg.com/736x/7a/fd/d5/7afdd5dd12a4e41d7854af48cef5f0eb.jpg"
+              src="https://i.pinimg.com/1200x/d1/ff/fb/d1fffb51206a6aac5a379623c07e0288.jpg"
               alt="ui/ux review check"
               className="w-[95%] rounded-2xl mx-auto mt-4 h-[400px] object-cover"
             />
