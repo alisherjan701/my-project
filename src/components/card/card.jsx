@@ -87,7 +87,7 @@ const Card = () => {
   };
 
   return (
-    <div className="p-8 bg-gradient-to-br from-orange-50 to-amber-100 min-h-screen">
+    <div className="p-8 bg- from-orange-50 to-amber-100 min-h-screen">
       <div className="flex justify-end mb-6 space-x-2">
         {["en", "ru", "uz"].map((lang) => (
           <button

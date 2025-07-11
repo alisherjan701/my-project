@@ -3,7 +3,7 @@ import React from "react";
 const Card1 = () => {
   return (
     <>
-      <div className="flex flex-wrap justify-center gap-6 p-6">
+      <div className="flex flex-wrap justify-center gap-6 bg-[#C2EFD4] p-6">
         <div className="relative flex flex-col rounded-2xl bg-white  max-w-xs w-full shadow-2xl toggle">
           <div className="relative overflow-hidden rounded-2xl bg-transparent">
             <img

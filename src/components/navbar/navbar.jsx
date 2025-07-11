@@ -1,35 +1,79 @@
-import { Link } from 'react-router-dom';
-import { navLinks } from '../../constants/index';
-import { ShoppingBag } from 'lucide-react';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { navLinks } from "../../constants/index";
+import { Languages, ShoppingBag, Menu, X } from "lucide-react";
 
 function Navbar() {
-  return (
-    <div className="w-full flex justify-around h-21 bg-[#C2EFD4] items-center">
-      <div>
-      <Link to={"/"}>
-           <h1 className="text-[#224F34] font-bold text-[25px] ">
-          GulchehraDrawer
-        </h1>
-      </Link>
-      </div>
-      <div className=" flex   justify-end items-center gap-8 space-x-4">
-        <div className='flex justify-center gap-9  mr-[120px] items-center w-[700px]'>
-          {navLinks.map((nav) => (
+  const [menuOpen, setMenuOpen] = useState(false);
 
-          <a href={nav.path} key={nav.slug} className="text-[#224F34] text-[20px] mr-[-8px] ml-[50px] font-bold hover:underline hover:text-gray-400">
-            {nav.name}
-          </a>
-          
-        ))}
+  return (
+    <nav className="w-full bg-[#C2EFD4] px-4 py-3">
+      <div className="max-w-7xl mx-auto flex justify-between items-center">
+        {/* Logo */}
+        <Link to="/">
+          <h1 className="text-[#224F34] font-bold text-2xl md:text-3xl">
+            GulchehraDrawer
+          </h1>
+        </Link>
+
+        {/* Desktop Nav */}
+        <div className="hidden md:flex items-center gap-10">
+          {navLinks.map((nav) => (
+            <Link
+              to={nav.path}
+              key={nav.slug}
+              className="text-[#224F34] text-lg font-semibold hover:text-gray-600 hover:underline"
+            >
+              {nav.name}
+            </Link>
+          ))}
         </div>
-        
-       <span className='flex justify-around  items-center  gap-6 '>
-        <span className='text-green-700 text-[30px] mr-[-11px]'>|</span>
-         <ShoppingBag className='text-green-800 mr-[40px] ml-[30px]'/>
-      <button className='text-[17px]   font-bold rounded-sm border-3 border-green-900 w-[160px] h-[40px] text-[#224F34]'>Ro`yhatdan o`tish</button>
-       </span>
+
+        {/* Right Side Icons (desktop) */}
+        <div className="hidden md:flex items-center gap-6">
+          <Languages />
+          <ShoppingBag className="text-green-800" />
+          <button className="text-sm font-semibold border border-green-900 px-4 py-2 rounded text-[#224F34] hover:bg-green-900 hover:text-white transition">
+            Ro'yhatdan o'tish
+          </button>
+        </div>
+
+        {/* Mobile Hamburger */}
+        <div className="md:hidden">
+          <button onClick={() => setMenuOpen(!menuOpen)}>
+            {menuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
+          </button>
+        </div>
       </div>
-    </div>
+
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <div className="md:hidden mt-4 space-y-4 bg-white rounded-lg p-4 shadow">
+          {navLinks.map((nav) => (
+            <Link
+              to={nav.path}
+              key={nav.slug}
+              className="block text-[#224F34] text-base font-semibold hover:text-gray-600"
+              onClick={() => setMenuOpen(false)}
+            >
+              {nav.name}
+            </Link>
+          ))}
+
+          <div className="flex items-center gap-4 pt-4 border-t border-gray-200">
+            <Languages className="text-green-600" />
+            <ShoppingBag className="text-green-800" />
+            <button className="text-sm font-semibold border border-green-900 px-3 py-1 rounded text-[#224F34] hover:bg-green-900 hover:text-white transition">
+              Ro'yhatdan o'tish
+            </button>
+          </div>
+        </div>
+      )}
+    </nav>
   );
 }
 
