@@ -1,28 +1,31 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Languages, ShoppingBag, Menu, X } from "lucide-react";
-
-const navLinks = [
-  { name: "Bosh sahifa", path: "/" },
-  { name: "Dokon", path: "#aloqa" },
-  { name: "Aloqa", path: "#aloqa" },
-];
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [showRegister, setShowRegister] = useState(false);
-  const [showContact, setShowContact] = useState(false);
+  const navigate = useNavigate();
 
-  const handleLinkClick = (navName) => {
-    if (navName === "Aloqa") {
-      setShowContact(true);
-      setMenuOpen(false);
-    }
+  const [formData, setFormData] = useState({
+    name: "",
+    surname: "",
+    email: "",
+    phone: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = () => {
+    setShowRegister(false);
+    navigate("/admin");
   };
 
   return (
     <>
-      <nav className="w-full bg-[#C2EFD4] px-4 py-3">
+      <nav className="w-full bg-[#C2EFD4] px-4 py-3 shadow">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <Link to="/">
             <h1 className="text-[#224F34] font-bold text-2xl md:text-3xl">
@@ -31,15 +34,18 @@ function Navbar() {
           </Link>
 
           <div className="hidden md:flex items-center gap-10">
-            {navLinks.map((nav, idx) => (
-              <button
-                key={idx}
-                onClick={() => handleLinkClick(nav.name)}
-                className="text-[#224F34] text-lg font-semibold hover:text-gray-600 hover:underline"
-              >
-                {nav.name}
-              </button>
-            ))}
+            <Link
+              to="/"
+              className="text-[#224F34] text-lg font-semibold hover:underline"
+            >
+              Bosh sahifa
+            </Link>
+            <Link
+              to="/contact"
+              className="text-[#224F34] text-lg font-semibold hover:underline"
+            >
+              Aloqa
+            </Link>
           </div>
 
           <div className="hidden md:flex items-center gap-6">
@@ -68,16 +74,20 @@ function Navbar() {
 
         {menuOpen && (
           <div className="md:hidden mt-4 space-y-4 bg-white rounded-lg p-4 shadow">
-            {navLinks.map((nav, idx) => (
-              <button
-                key={idx}
-                onClick={() => handleLinkClick(nav.name)}
-                className="block text-[#224F34] text-base font-semibold hover:text-gray-600"
-              >
-                {nav.name}
-              </button>
-            ))}
-
+            <Link
+              to="/"
+              className="block text-[#224F34] text-base font-semibold hover:text-gray-600"
+              onClick={() => setMenuOpen(false)}
+            >
+              Bosh sahifa
+            </Link>
+            <Link
+              to="/contact"
+              className="block text-[#224F34] text-base font-semibold hover:text-gray-600"
+              onClick={() => setMenuOpen(false)}
+            >
+              Aloqa
+            </Link>
             <div className="flex items-center gap-4 pt-4 border-t border-gray-200">
               <Languages className="text-green-600" />
               <Link to="/card">
@@ -97,6 +107,7 @@ function Navbar() {
         )}
       </nav>
 
+      {/* Ro'yhatdan o'tish Modal */}
       {showRegister && (
         <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50">
           <div className="bg-white p-6 rounded-lg shadow-lg w-[90%] max-w-md space-y-4">
@@ -105,22 +116,34 @@ function Navbar() {
             </h2>
             <input
               type="text"
-              placeholder="Ism"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              placeholder="Ismingiz"
               className="w-full border p-2 rounded"
             />
             <input
               type="text"
-              placeholder="Familya"
+              name="surname"
+              value={formData.surname}
+              onChange={handleChange}
+              placeholder="Familyangiz"
               className="w-full border p-2 rounded"
             />
             <input
               type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
               placeholder="Email"
               className="w-full border p-2 rounded"
             />
             <input
               type="tel"
-              placeholder="Telefon raqam"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              placeholder="Telefon raqamingiz"
               className="w-full border p-2 rounded"
             />
             <div className="flex justify-between gap-3">
@@ -130,43 +153,10 @@ function Navbar() {
               >
                 Bekor qilish
               </button>
-              <button className="w-full bg-green-700 text-white py-2 rounded hover:bg-green-800">
-                Yuborish
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {showContact && (
-        <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50">
-          <div className="bg-white p-6 rounded-lg shadow-lg w-[90%] max-w-md space-y-4">
-            <h2 className="text-xl font-bold text-center text-green-800">
-              Biz bilan bog'lanish
-            </h2>
-            <input
-              type="text"
-              placeholder="Ismingiz"
-              className="w-full border p-2 rounded"
-            />
-            <input
-              type="tel"
-              placeholder="Telefon raqamingiz"
-              className="w-full border p-2 rounded"
-            />
-            <input
-              type="text"
-              placeholder="Yashash manzilingiz"
-              className="w-full border p-2 rounded"
-            />
-            <div className="flex justify-between gap-3">
               <button
-                onClick={() => setShowContact(false)}
-                className="w-full border border-gray-500 py-2 rounded hover:bg-gray-100"
+                onClick={handleSubmit}
+                className="w-full bg-green-700 text-white py-2 rounded hover:bg-green-800"
               >
-                Bekor qilish
-              </button>
-              <button className="w-full bg-green-700 text-white py-2 rounded hover:bg-green-800">
                 Yuborish
               </button>
             </div>
