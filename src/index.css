@@ -1,1 +1,5 @@
 @import "tailwindcss";
+.bg_img {
+  border-top-left-radius: 80px;
+  border-bottom-right-radius: 80px;
+}
