@@ -30,7 +30,7 @@ const dressInfos = [
 
 const DressInfoCard = () => {
   return (
-    <div className="bg-[#C2EFD4] min-h-screen py-10 px-4">
+    <div className=" min-h-screen py-10 px-4">
       <h2 className="text-3xl font-bold text-center text-[#224F34] mb-8">
         Ko‘ylaklar haqida ma’lumot
       </h2>

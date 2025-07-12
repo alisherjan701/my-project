@@ -44,7 +44,7 @@ const Card = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#C2EFD4] px-6 py-12">
+    <div className="min-h-screen bg-cyan-100 px-6 py-12">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {products.map((product) => (
           <div

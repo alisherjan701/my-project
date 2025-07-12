@@ -61,7 +61,7 @@ const Filter = () => {
   };
 
   return (
-    <div className="bg-[#C2EFD4] min-h-screen p-6">
+    <div className="  min-h-screen p-6">
      
       <div className="flex gap-6 justify-center text-lg mb-6">
         {tabs.map((tab) => (

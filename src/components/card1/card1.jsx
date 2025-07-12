@@ -24,6 +24,19 @@ const items = [
   {
     img: "https://i.pinimg.com/736x/f4/12/f9/f412f9d01b2e002bf1acd596fc97a8f1.jpg",
     price: "$32.99",
+  }, 
+   {
+    img: "https://i.pinimg.com/236x/11/83/72/118372ba2f6922ee77b0de1da3d0c262.jpg",
+    price: "$32.99",
+  }, {
+    img: "https://i.pinimg.com/236x/6c/26/91/6c26911b72c139ad58c95ffe8778d5cf.jpg",
+    price: "$32.99",
+  }, {
+    img: "https://i.pinimg.com/1200x/24/3a/49/243a49021bf2d06cc4d2ad6d3bbd0705.jpg",
+    price: "$32.99",
+  }, {
+    img: "https://i.pinimg.com/1200x/17/de/bd/17debd1d35e07b8970f25aa668f2932f.jpg",
+    price: "$32.99",
   },
 ];
 
