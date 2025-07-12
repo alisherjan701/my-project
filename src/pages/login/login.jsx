@@ -45,13 +45,13 @@ const RegisterModal = ({ show, onClose, onSubmit, formData, handleChange }) => {
         <div className="flex justify-between gap-3">
           <button
             onClick={onClose}
-            className="w-full border border-gray-500 py-2 rounded hover:bg-gray-100"
+            className="w-full border-2 border-green-900 py-2 rounded hover:bg-green-700 hover:border-none hover:text-white font-bold"
           >
             Bekor qilish
           </button>
           <button
             onClick={onSubmit}
-            className="w-full bg-green-700 text-white py-2 rounded hover:bg-green-800"
+            className="w-full bg-green-700 text-white py-2 rounded font-bold hover:bg-green-800"
           >
             Yuborish
           </button>

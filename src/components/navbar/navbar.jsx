@@ -1,26 +1,14 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Languages, ShoppingBag, Menu, X } from "lucide-react";
-import RegisterModal from "../../pages/login/login"; // modal komponentingiz
+import {  ShoppingBag, Menu, X } from "lucide-react";
+import RegisterModal from "../../pages/login/login";
+import { navLinks } from "../../constants";
 
-// Navlinklar (bosh sahifa, katalog, bozor, aloqa)
-export const navLinks = [
-  { path: "/", name: "Bosh Sahifa" },
-  { path: "/cards", name: "Katalog" },
-  { path: "/shop", name: "Bozor" },
-  { path: "/contact", name: "Aloqa" },
-];
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [showRegister, setShowRegister] = useState(false);
-
-  const [formData, setFormData] = useState({
-    name: "",
-    surname: "",
-    email: "",
-    phone: "",
-  });
+  const [formData, setFormData] = useState({ name: "", surname: "", email: "", phone: "" });
 
   const handleChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -31,9 +19,14 @@ function Navbar() {
     setShowRegister(false);
   };
 
+  const setLanguage = (lang) => {
+    localStorage.setItem("lang", lang);
+    window.location.reload();
+  };
+
   return (
     <>
-      <nav className="w-full bg-[#C2EFD4] px-4 py-3 shadow">
+      <nav className="w-full bg-[#C2EFD4] px-4 py-3 shadow relative">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <Link to="/">
             <h1 className="text-[#224F34] font-bold text-2xl md:text-3xl">
@@ -45,7 +38,7 @@ function Navbar() {
             {navLinks.map((nav) => (
               <Link
                 to={nav.path}
-                key={nav.path}
+                key={nav.slug}
                 className="text-[#224F34] text-lg font-semibold hover:text-gray-600 hover:underline"
               >
                 {nav.name}
@@ -53,14 +46,16 @@ function Navbar() {
             ))}
           </div>
 
-          <div className="hidden md:flex items-center gap-6">
-            <Languages className="mr-[20px]" />
+          <div className="hidden md:flex items-center gap-6 relative">
+           
+
             <Link to="/card">
-              <ShoppingBag className="text-green-800 cursor-pointer" />
+              <ShoppingBag className="text-green-800 cursor-pointer w-6 h-6" />
             </Link>
+
             <button
               onClick={() => setShowRegister(true)}
-              className="text-sm font-semibold border border-green-900 px-4 py-2 rounded text-[#224F34] hover:bg-green-900 hover:text-white transition"
+              className="text-sm font-semibold  mr-[80px] border-green-900 px-4 py-2 rounded text-[#224F34] hover:bg-green-900 hover:text-white transition"
             >
               Ro'yhatdan o'tish
             </button>
@@ -91,7 +86,6 @@ function Navbar() {
             ))}
 
             <div className="flex items-center gap-4 pt-4 border-t border-gray-200">
-              <Languages className="text-green-600" />
               <Link to="/card">
                 <ShoppingBag className="text-green-800 cursor-pointer" />
               </Link>
