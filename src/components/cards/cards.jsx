@@ -159,9 +159,57 @@ const customCards = [
     description: "Yozgi mavsum uchun soddaligi bilan ajralib turadigan dizayn.",
     price: "$36.75 | 4.6 ★",
   },
+  {
+    img: "https://i.pinimg.com/1200x/10/8b/59/108b59a304e6d347fe099d7a12fe4f6e.jpg",
+    title: "Pastel Minimalist Ko'ylak",
+    description: "Yozgi mavsum uchun soddaligi bilan ajralib turadigan dizayn.",
+    price: "$36.75 | 4.6 ★",
+  },
+  {
+    img: "https://i.pinimg.com/736x/ff/c6/17/ffc617dc0e798d3c3f5ebe3efaab4a6b.jpg",
+    title: "Romantik A-Line Ko'ylak",
+    description: "Yozgi mavsum uchun soddaligi bilan ajralib turadigan dizayn.",
+    price: "$36.75 | 4.6 ★",
+  },
+  {
+    img: "https://i.pinimg.com/1200x/1c/95/6f/1c956f9e9087bd2ad00735882bdf5350.jpg",
+    title: "Vintage Uslubdagi Ko'ylak",
+    description: "Yozgi mavsum uchun soddaligi bilan ajralib turadigan dizayn.",
+    price: "$36.75 | 4.6 ★",
+  },
+  {
+    img: "https://i.pinimg.com/1200x/d8/fd/40/d8fd4091da881f1b48be47af741da125.jpg",
+    title: "Yozgi mavsum uchun soddaligi bilan ajralib turadigan dizayn.",
+    description: "Yozgi mavsum uchun soddaligi bilan ajralib turadigan dizayn.",
+    price: "$36.75 | 4.6 ★",
+  },
+  {
+    img: "https://i.pinimg.com/1200x/74/8f/3c/748f3c8b4876e7d661c7d660967681f8.jpg",
+    title: "Lazer Naqshli Ko'ylak",
+    description: "Yozgi mavsum uchun soddaligi bilan ajralib turadigan dizayn.",
+    price: "$36.75 | 4.6 ★",
+  },
+  {
+    img: "https://i.pinimg.com/1200x/8e/79/a4/8e79a4d6e72b6274b4000f28d18fb02d.jpg",
+    title: "Chiziqli Klassik Ko‘ylak",
+    description: "Yozgi mavsum uchun soddaligi bilan ajralib turadigan dizayn.",
+    price: "$36.75 | 4.6 ★",
+  },
+  {
+    img: "https://i.pinimg.com/736x/be/9f/e3/be9fe3fd1a1290e540259b1351c146bf.jpg",
+    title: "Ko‘p Qatlamli Pastel Ko‘ylak",
+    description: "Yozgi mavsum uchun soddaligi bilan ajralib turadigan dizayn.",
+    price: "$36.75 | 4.6 ★",
+  },
+  {
+    img: "https://i.pinimg.com/736x/ef/01/bd/ef01bd4b5d140ea785a3a6a95c5cba50.jpg",
+    title: "Kundalik Pastel Ko'ylak",
+    description: "Yozgi mavsum uchun soddaligi bilan ajralib turadigan dizayn.",
+    price: "$36.75 | 4.6 ★",
+  },
 ];
 
-const randomCards = Array.from({ length: 10 }).map((_, i) => ({
+const randomCards = Array.from({ length: 0 }).map((_, i) => ({
   img: `https://source.unsplash.com/random/400x500?sig=${i + 100}`,
   title: "Mahsulot nomi",
   description: "Tavsifi mavjud emas.",
@@ -172,14 +220,14 @@ const cards = [...customCards, ...randomCards]; // umumiy 24 ta
 
 function Cards() {
   return (
-    <div className="min-h-screen bg-[#C2EFD4] p-6">
+    <div className="min-h-screen bg-[#C2EFD4] p-6 ">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {cards.map((item, i) => (
           <div
             key={i}
-            className="flex flex-col rounded-2xl bg-white shadow-2xl w-full"
+            className="flex flex-col rounded-2xl bg-white w-full shadow-2xl toggle"
           >
-            <div className="overflow-hidden rounded-2xl bg-transparent">
+            <div className="overflow-hidden rounded-2xl bg-transparent shadow-2xl toggle">
               <img
                 src={item.img}
                 alt={item.title}

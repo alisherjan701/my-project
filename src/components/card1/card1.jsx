@@ -1,4 +1,3 @@
-
 const Card1 = () => {
   return (
     <div className="flex flex-wrap justify-center gap-6 bg-[#C2EFD4] p-6">
@@ -23,12 +22,16 @@ const Card1 = () => {
           img: "https://i.pinimg.com/1200x/b1/1f/0a/b11f0acbda6f189529cc6b537aca67fe.jpg",
           price: "$32.99",
         },
+        {
+          img: "https://i.pinimg.com/736x/f4/12/f9/f412f9d01b2e002bf1acd596fc97a8f1.jpg",
+          price: "$32.99",
+        },
       ].map((item, index) => (
         <div
           key={index}
-          className="relative flex flex-col rounded-2xl bg-white max-w-xs w-full shadow-2xl"
+          className="relative flex flex-col rounded-2xl bg-white max-w-xs w-full shadow-2xl toggle "
         >
-          <div className="relative overflow-hidden rounded-2xl bg-transparent">
+          <div className="relative overflow-hidden rounded-2xl bg-transparent shadow-2xl toggle">
             <img
               src={item.img}
               alt={`item-${index}`}
@@ -37,11 +40,10 @@ const Card1 = () => {
           </div>
           <div className="p-6">
             <h4 className="text-2xl font-semibold text-blue-gray-900">
+              <h1>salom</h1>
               Lorem ipsum dolor sit amet consectetur
             </h4>
-            <p className="mt-3 text-xl text-gray-700">
-              {item.price} | 5.0 ★
-            </p>
+            <p className="mt-3 text-xl text-gray-700">{item.price} | 5.0 ★</p>
           </div>
           <div className="flex items-center justify-between p-6">
             <div className="flex items-center space-x-3">

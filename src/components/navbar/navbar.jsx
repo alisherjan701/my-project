@@ -35,14 +35,12 @@ function Navbar() {
     <>
       <nav className="w-full bg-[#C2EFD4] px-4 py-3 shadow">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          {/* Logo */}
           <Link to="/">
             <h1 className="text-[#224F34] font-bold text-2xl md:text-3xl">
               GulchehraDrawer
             </h1>
           </Link>
 
-          {/* Desktop menyu */}
           <div className="hidden md:flex items-center gap-10">
             {navLinks.map((nav) => (
               <Link
@@ -70,7 +68,11 @@ function Navbar() {
 
           <div className="md:hidden">
             <button onClick={() => setMenuOpen(!menuOpen)}>
-              {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {menuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
             </button>
           </div>
         </div>

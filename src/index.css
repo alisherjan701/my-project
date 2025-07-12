@@ -3,3 +3,8 @@
   border-top-left-radius: 80px;
   border-bottom-right-radius: 80px;
 }
+.toggle:hover {
+  transform: translateY(-10px);
+  box-shadow: none;
+  transition: 800ms;
+}
