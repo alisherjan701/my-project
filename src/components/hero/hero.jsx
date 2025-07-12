@@ -26,7 +26,7 @@ function Hero() {
           transition={{ delay: 0.7, duration: 1 }}
           className="w-[600px] mt-[40px] text-[#224F34]"
         >
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae,
+          Lorem ipsum dolor,  amet consectetur adipisicing elit. Molestiae,
           commodi vero? Corporis illo nobis sint dicta ab! Nulla autem
           inventore est sequi distinctio earum, corrupti mollitia quod
           voluptatem neque aut dolores eaque id, nobis alias.
