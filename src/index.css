@@ -3,3 +3,7 @@
   border-top-left-radius: 80px;
   border-bottom-right-radius: 80px;
 }
+
+body {
+  overflow-x: hidden;
+}

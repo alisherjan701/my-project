@@ -1,4 +1,6 @@
+import { ArrowRight } from "lucide-react";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const images = [
   "https://i.pinimg.com/1200x/a4/c7/61/a4c761b0f662c783e913f5fde0a2a25f.jpg",
@@ -22,19 +24,19 @@ const Carusel = () => {
   }, []);
 
   return (
-    <div className="relative w-full overflow-hidden h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px]">
+    <div className="relative w-full  h-[600px] md:h-[500px] lg:h-[600px]">
       {/* KATTAROQ ORQA FON */}
       <div className="absolute top-0 left-0 w-full h-full -z-10 scale-110">
         <img
           src={images[currentIndex]}
           alt="Background"
-          className="w-full h-full object-cover filter blur-md brightness-50"
+          className="w-full h-[1000px] relative nb-[20px] object-cover filter blur-md brightness-50"
         />
       </div>
 
       {/* Slayder */}
       <div
-        className="flex h-full transition-transform duration-700 ease-in-out"
+        className="flex h-[480px]  mt-[30px] mb-[30px] transition-transform duration-700 ease-in-out"
         style={{
           width: `${images.length * 100}%`,
           transform: `translateX(-${currentIndex * (100 / images.length)}%)`,
@@ -56,7 +58,7 @@ const Carusel = () => {
       </div>
 
       {/* Dots */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20 flex space-x-2">
+      <div className="absolute bottom-4 left-1/2    transform -translate-x-1/2 z-20 flex space-x-2">
         {images.map((_, index) => (
           <button
             key={index}
@@ -66,7 +68,16 @@ const Carusel = () => {
             }`}
           />
         ))}
+        
       </div>
+          <div>
+            <Link to="/catalog">
+      <button className="w-[210px] h-[45px]  mx-auto flex items-center justify-center gap-2 border-2 border-green-900 text-white font-medium s rounded-lg hover:bg-green-800 hover:border-none text-[19px] group  transition-all duration-300">
+        Katalogga kirish
+        <ArrowRight className="w-5 h-5 transition-transform duration-300 transform group-hover:translate-x-1" />
+      </button>
+    </Link>
+          </div>
     </div>
   );
 };

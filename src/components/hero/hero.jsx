@@ -9,7 +9,7 @@ function Hero() {
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 1 }}
-        className="text-center lg:text-left"
+        className="text-center ml-[60px] lg:text-left"
       >
         <motion.h1
           initial={{ scale: 0.8, opacity: 0 }}
@@ -51,7 +51,7 @@ function Hero() {
         initial={{ x: 100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 1.2 }}
-        className="mt-10 lg:mt-[100px] bg_img lg:ml-[60px] h-[500px] w-full max-w-[300px] sm:max-w-[350px] md:max-w-[400px] lg:max-w-[480px] overflow-hidden border-2 border-green-800 rounded-xl"
+        className="mt-10 lg:mt-[100px] bg_img mr-[60px] lg:ml-[60px] h-[500px] w-full max-w-[300px] sm:max-w-[350px] md:max-w-[400px] lg:max-w-[480px] overflow-hidden border-2 border-green-800 rounded-xl"
       >
         <img src={heroImg} alt="" className="w-full bg_img overflow-hidden h-auto" />
           

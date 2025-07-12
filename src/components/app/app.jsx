@@ -9,16 +9,16 @@ import Cards from "../cards/cards";
 
 function App() {
   return (
-    <>
+    <div className="w-full ">
       <Navbar />
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/card" element={<Card />} />
+        <Route path="/cards" element={<Card />} />
         <Route path="/card" element={<Cards />} />
+        <Route path="/catalog" element={<Cards/>}/>
       </Routes>
-      <Cards />
       <Footer />
-    </>
+    </div>
   );
 }
 
