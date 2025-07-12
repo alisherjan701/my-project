@@ -26,7 +26,7 @@ function Navbar() {
 
   return (
     <>
-      <nav className="w-full bg-[#C2EFD4] px-4 py-3 shadow relative">
+      <nav className="w-full bg-[#C2EFD4] px-4 py-3 shadow-lg relative">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <Link to="/">
             <h1 className="text-[#224F34] font-bold text-2xl md:text-3xl">

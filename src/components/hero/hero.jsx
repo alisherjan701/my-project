@@ -38,7 +38,7 @@ function Hero() {
           transition={{ delay: 1.1, duration: 0.8 }}
           className="flex justify-baseline items-center"
         >
-          <button className="ml-[30px] mt-[60px] bg-green-800 text-amber-50 h-[40px] font-bold hover:bg-[#C2EFD4] w-[120px] hover:border-2 hover:border-green-900 rounded-[20px] hover:text-green-800">
+          <button className="ml-[30px] mt-[60px]  bg-green-800 text-amber-50 h-[40px] border-green-800 font-bold hover:bg-[#C2EFD4] w-[120px]  hover:border-green-900 rounded-[20px] hover:text-green-800">
             Bog`lanish
           </button>
           <button className="ml-[40px] text-green-900 mt-[60px] border-2 font-medium hover:bg-green-800 hover:text-white hover:font-bold  border-green-800 h-[40px] rounded-[20px] w-[150px]">

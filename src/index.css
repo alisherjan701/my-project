@@ -3,15 +3,14 @@
   border-top-left-radius: 80px;
   border-bottom-right-radius: 80px;
 }
-<<<<<<< HEAD
 .toggle:hover {
   transform: translateY(-10px);
   box-shadow: none;
   transition: 800ms;
 }
-=======
+
 
 body {
   overflow-x: hidden;
 }
->>>>>>> 5f6fd7ec9a68f80260bac7aa4075f18df1a7df38
+

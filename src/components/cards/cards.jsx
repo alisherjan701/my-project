@@ -9,6 +9,12 @@ const cards = [
     price: "$48.99 | 5.0 ★",
   },
   {
+  img: "https://i.pinimg.com/1200x/56/1d/c5/561dc593841b6db61b768c5deadabab0.jpg",
+  title: "Andom Ko‘ylak",
+  description: "Milliy naqshlar bilan bezatilgan, nafis atlas matoli bayramona ko‘ylak.",
+  price: "$68.50 | 5.0 ★",
+},
+  {
     img: "https://i.pinimg.com/1200x/30/bd/2f/30bd2fd26f94df860f94bfd3d32535af.jpg",
     title: "Maxi Boho Ko'ylak",
     description: "Chiffon matoli, keng siluet, harakat uchun yengil va qulay.",
@@ -145,83 +151,69 @@ const cards = [
     title: "Minimalist Summer Dress",
     description: "Yozgi mavsum uchun soddaligi bilan ajralib turadigan dizayn.",
     price: "$36.75 | 4.6 ★",
-<<<<<<< HEAD
-  },
-  {
-    img: "https://i.pinimg.com/1200x/10/8b/59/108b59a304e6d347fe099d7a12fe4f6e.jpg",
-    title: "Pastel Minimalist Ko'ylak",
-    description: "Yozgi mavsum uchun soddaligi bilan ajralib turadigan dizayn.",
-    price: "$36.75 | 4.6 ★",
   },
   {
     img: "https://i.pinimg.com/736x/ff/c6/17/ffc617dc0e798d3c3f5ebe3efaab4a6b.jpg",
-    title: "Romantik A-Line Ko'ylak",
-    description: "Yozgi mavsum uchun soddaligi bilan ajralib turadigan dizayn.",
-    price: "$36.75 | 4.6 ★",
+    title: "Elegant Ko‘ylak",
+    description: "Oddiy dizayn, nafis siluet, bayram tadbirlari uchun.",
+    price: "$60.00 | 4.9 ★",
   },
   {
     img: "https://i.pinimg.com/1200x/1c/95/6f/1c956f9e9087bd2ad00735882bdf5350.jpg",
-    title: "Vintage Uslubdagi Ko'ylak",
-    description: "Yozgi mavsum uchun soddaligi bilan ajralib turadigan dizayn.",
-    price: "$36.75 | 4.6 ★",
+    title: "Tilla Atlas Ko‘ylak",
+    description: "Atlas matodan tikilgan, tilla naqshli tantanali kiyim.",
+    price: "$75.25 | 5.0 ★",
   },
   {
     img: "https://i.pinimg.com/1200x/d8/fd/40/d8fd4091da881f1b48be47af741da125.jpg",
-    title: "Yozgi mavsum uchun soddaligi bilan ajralib turadigan dizayn.",
-    description: "Yozgi mavsum uchun soddaligi bilan ajralib turadigan dizayn.",
-    price: "$36.75 | 4.6 ★",
+    title: "Klassik Bezakli Ko‘ylak",
+    description: "Turli bezaklar bilan boyitilgan nafis ko‘ylak.",
+    price: "$58.70 | 4.8 ★",
   },
   {
     img: "https://i.pinimg.com/1200x/74/8f/3c/748f3c8b4876e7d661c7d660967681f8.jpg",
-    title: "Lazer Naqshli Ko'ylak",
-    description: "Yozgi mavsum uchun soddaligi bilan ajralib turadigan dizayn.",
-    price: "$36.75 | 4.6 ★",
+    title: "Lazer Naqshli Midi Ko‘ylak",
+    description: "To‘g‘ri kesim, lazer naqshli zamonaviy ko‘ylak.",
+    price: "$47.40 | 4.7 ★",
   },
   {
     img: "https://i.pinimg.com/1200x/8e/79/a4/8e79a4d6e72b6274b4000f28d18fb02d.jpg",
-    title: "Chiziqli Klassik Ko‘ylak",
-    description: "Yozgi mavsum uchun soddaligi bilan ajralib turadigan dizayn.",
-    price: "$36.75 | 4.6 ★",
+    title: "Yumshoq Gulli Ko‘ylak",
+    description: "Gulli pastel naqshli, har kuni kiyish uchun qulay.",
+    price: "$39.99 | 4.8 ★",
   },
   {
     img: "https://i.pinimg.com/736x/be/9f/e3/be9fe3fd1a1290e540259b1351c146bf.jpg",
-    title: "Ko‘p Qatlamli Pastel Ko‘ylak",
-    description: "Yozgi mavsum uchun soddaligi bilan ajralib turadigan dizayn.",
-    price: "$36.75 | 4.6 ★",
+    title: "Yumshoq Ko‘p Qatlamli Ko‘ylak",
+    description: "Hajmli yubka bilan chiroyli kesim, yoz uchun mos.",
+    price: "$42.25 | 4.9 ★",
   },
   {
     img: "https://i.pinimg.com/736x/ef/01/bd/ef01bd4b5d140ea785a3a6a95c5cba50.jpg",
-    title: "Kundalik Pastel Ko'ylak",
-    description: "Yozgi mavsum uchun soddaligi bilan ajralib turadigan dizayn.",
-    price: "$36.75 | 4.6 ★",
-  },
-];
-
-const randomCards = Array.from({ length: 0 }).map((_, i) => ({
-  img: `https://source.unsplash.com/random/400x500?sig=${i + 100}`,
-  title: "Mahsulot nomi",
-  description: "Tavsifi mavjud emas.",
-  price: `$${(34 + i).toFixed(2)} | ${(4 + (i % 2) * 0.5).toFixed(1)} ★`,
-}));
-
-const cards = [...customCards, ...randomCards]; // umumiy 24 ta
-
-=======
+    title: "Qishda kiyish uchun pastel ko‘ylak",
+    description: "Qalin matodan tikilgan, zamonaviy kesimli dizayn.",
+    price: "$40.00 | 4.6 ★",
   }
 ];
 
->>>>>>> 5f6fd7ec9a68f80260bac7aa4075f18df1a7df38
 function Cards() {
   return (
-    <div className="min-h-screen bg-[#C2EFD4] p-6 ">
+    <div className="min-h-screen bg-[#C2EFD4] p-6">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-<<<<<<< HEAD
         {cards.map((item, i) => (
-          <div
+          <motion.div
             key={i}
-            className="flex flex-col rounded-2xl bg-white w-full shadow-2xl toggle"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: i * 0.04 }}
+            whileHover={{
+              scale: 1.05,
+              y: -8,
+              transition: { type: "spring", stiffness: 300 },
+            }}
+            className="flex flex-col rounded-2xl bg-white shadow-2xl w-full cursor-pointer"
           >
-            <div className="overflow-hidden rounded-2xl bg-transparent shadow-2xl toggle">
+            <div className="overflow-hidden rounded-2xl bg-transparent">
               <img
                 src={item.img}
                 alt={item.title}
@@ -237,43 +229,8 @@ function Cards() {
                 {item.price}
               </p>
             </div>
-          </div>
+          </motion.div>
         ))}
-=======
-        {cards.map((item, i) => {
-          return (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: i * 0.05 }}
-              whileHover={{
-                scale: 1.05,
-                y: -8,
-                transition: { type: "spring", stiffness: 300 },
-              }}
-              className="flex flex-col rounded-2xl bg-white shadow-2xl w-full cursor-pointer"
-            >
-              <div className="overflow-hidden rounded-2xl bg-transparent">
-                <img
-                  src={item.img}
-                  alt={item.title}
-                  className="w-[95%] rounded-2xl mx-auto mt-4 h-[300px] object-cover"
-                />
-              </div>
-              <div className="p-4">
-                <h4 className="text-lg font-semibold text-blue-gray-900">
-                  {item.title}
-                </h4>
-                <p className="text-sm mt-1 text-gray-600">{item.description}</p>
-                <p className="mt-2 text-base text-gray-800 font-semibold">
-                  {item.price}
-                </p>
-              </div>
-            </motion.div>
-          );
-        })}
->>>>>>> 5f6fd7ec9a68f80260bac7aa4075f18df1a7df38
       </div>
     </div>
   );
