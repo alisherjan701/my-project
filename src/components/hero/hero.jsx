@@ -22,7 +22,7 @@ function Hero() {
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.8 }}
-          className="text-[#224F34] text-3xl sm:text-4xl md:text-5xl lg:text-[60px] font-black leading-tight"
+          className="text-green-600 text-3xl sm:text-4xl md:text-5xl lg:text-[60px] font-black leading-tight"
         >
           O'z moodangizni kashf eting va toping!
         </motion.h1>
@@ -31,11 +31,11 @@ function Hero() {
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.7, duration: 1 }}
-          className="mt-6 text-green-800 font-bold text-base sm:text-lg"
+          className="mt-6 text-green-600 font-bold text-base sm:text-lg"
         >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
-          commodi vero? Corporis illo nobis sint dicta ab! Nulla autem
-          inventore est sequi distinctio earum, corrupti mollitia quod.
+         Moda tushunchasi keng ma'noda tushuniladi, u nafaqat kiyim-kechak, balki turmush tarzi, go'zallik, dizayn va hatto madaniyatga ham ta'sir qiladi. 
+
+
         </motion.p>
 
         <motion.div
@@ -47,7 +47,7 @@ function Hero() {
           <button className="bg-green-800 text-white h-[40px] px-6 font-bold hover:bg-[#C2EFD4] hover:text-green-800 border border-green-800 rounded-[20px] transition-all">
             Bog'lanish
           </button>
-          <button className="text-green-900 border-2 border-green-800 h-[40px] px-6 font-medium hover:bg-green-800 hover:text-white hover:font-bold rounded-[20px] transition-all">
+          <button className="text-green-700 border-2 border-green-800 h-[40px] px-6 font-medium hover:bg-green-800 hover:text-white hover:font-bold rounded-[20px] transition-all">
             Bizning katalog
           </button>
         </motion.div>

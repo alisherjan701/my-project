@@ -1,4 +1,7 @@
-import React from "react";
+
+
+
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 const cards = [
@@ -196,7 +199,58 @@ const cards = [
   }
 ];
 
+
 function Cards() {
+  const [showModal, setShowModal] = useState(false);
+  const [selectedCard, setSelectedCard] = useState(null);
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    phone: "",
+    quantity: 1,
+  });
+
+  const handleOpen = (card) => {
+    setSelectedCard(card);
+    setShowModal(true);
+  };
+
+  const handleClose = () => {
+    setShowModal(false);
+    setFormData({ firstName: "", lastName: "", phone: "", quantity: 1 });
+  };
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const orderData = {
+      ...formData,
+      product: selectedCard.title,
+      image: selectedCard.img,
+      price: selectedCard.price,
+    };
+
+    try {
+      const res = await fetch("http://localhost:3001/orders", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(orderData),
+      });
+      if (res.ok) {
+        alert("Buyurtma muvaffaqiyatli yuborildi!");
+        handleClose();
+      } else {
+        alert("Xatolik yuz berdi.");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Server bilan bog'lanishda xatolik.");
+    }
+  };
+
   return (
     <div className="min-h-screen bg-[#C2EFD4] p-6">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
@@ -225,13 +279,80 @@ function Cards() {
                 {item.title}
               </h4>
               <p className="text-sm mt-1 text-gray-600">{item.description}</p>
-              <p className="mt-2 text-base text-gray-800 font-semibold">
-                {item.price}
-              </p>
+              <p className="mt-2 text-base text-gray-800 font-semibold">{item.price}</p>
+              <button
+                className="mt-4 bg-[#224F34] hover:bg-[#1a3e29] text-white py-2 px-4 rounded-xl w-full transition"
+                onClick={() => handleOpen(item)}
+              >
+                Hozir buyurtma berish
+              </button>
             </div>
           </motion.div>
         ))}
       </div>
+
+      {/* Modal */}
+      {showModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
+          <div className="bg-white p-6 rounded-2xl w-full max-w-md shadow-xl">
+            <h2 className="text-xl font-bold mb-4">Buyurtma berish</h2>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <input
+                type="text"
+                name="firstName"
+                placeholder="Ismingiz"
+                value={formData.firstName}
+                onChange={handleChange}
+                required
+                className="w-full p-2 border border-gray-300 rounded-xl"
+              />
+              <input
+                type="text"
+                name="lastName"
+                placeholder="Familiyangiz"
+                value={formData.lastName}
+                onChange={handleChange}
+                required
+                className="w-full p-2 border border-gray-300 rounded-xl"
+              />
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Telefon raqam"
+                value={formData.phone}
+                onChange={handleChange}
+                required
+                className="w-full p-2 border border-gray-300 rounded-xl"
+              />
+              <input
+                type="number"
+                name="quantity"
+                placeholder="Nechta buyurtma"
+                value={formData.quantity}
+                min="1"
+                onChange={handleChange}
+                required
+                className="w-full p-2 border border-gray-300 rounded-xl"
+              />
+              <div className="flex justify-end gap-3 mt-4">
+                <button
+                  type="button"
+                  onClick={handleClose}
+                  className="px-4 py-2 rounded-xl bg-gray-200 hover:bg-gray-300"
+                >
+                  Bekor qilish
+                </button>
+                <button
+                  type="submit"
+                  className="px-4 py-2 rounded-xl bg-[#224F34] hover:bg-[#1a3e29] text-white"
+                >
+                  Yuborish
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

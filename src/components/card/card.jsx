@@ -1,39 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Heart } from "lucide-react";
-
-const products = [
-  {
-    id: 1,
-    name: "An'anaviy o'zbek ko'ylagi",
-    description: "An'anaviy kashta bilan bezatilgan nafis ipak ko'ylak",
-    price: "$299",
-    image: "https://i.pinimg.com/236x/2d/e6/5d/2de65d4bce51e7b43a2abe6169571a45.jpg",
-  },
-  {
-    id: 2,
-    name: "Kashtalangan chapan",
-    description: "Oltin ip bilan bezatilgan dabdabali marosim kiyimi",
-    price: "$459",
-    image: "https://i.pinimg.com/236x/11/83/72/118372ba2f6922ee77b0de1da3d0c262.jpg",
-  },
-  {
-    id: 3,
-    name: "Suzani nimcha",
-    description: "An'anaviy suzani naqshlari bilan qo'lda tikilgan nimcha",
-    price: "$189",
-    image: "https://i.pinimg.com/236x/6c/26/91/6c26911b72c139ad58c95ffe8778d5cf.jpg",
-  },
-  {
-    id: 4,
-    name: "Ipak ro'mol",
-    description: "An'anaviy naqshlar bilan bezatilgan premium ipak ro'mol",
-    price: "$79",
-    image: "https://i.pinimg.com/736x/ed/78/04/ed78047983d58a91bcb5a0f8156eaabd.jpg",
-  },
-];
+import { Link } from "react-router-dom";
 
 const Card = () => {
+  const [products, setProducts] = useState([]);
   const [likedProducts, setLikedProducts] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:3001/products")
+      .then((res) => res.json())
+      .then((data) => setProducts(data))
+      .catch((err) => console.error("Xatolik:", err));
+  }, []);
 
   const toggleLike = (productId) => {
     setLikedProducts((prev) =>
@@ -44,7 +22,7 @@ const Card = () => {
   };
 
   return (
-    <div className="min-h-screen bg-cyan-100 px-6 py-12">
+    <div className=" bg-cyan-100 px-6 py-12">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {products.map((product) => (
           <div
@@ -82,9 +60,11 @@ const Card = () => {
                 <span className="text-lg font-bold text-blue-700">
                   {product.price}
                 </span>
-                <button className="bg-gradient-to-r from-emerald-500 to-emerald-700 text-white px-4 py-2 rounded-full text-sm font-medium hover:from-blue-700 hover:to-purple-700 transition-all transform hover:scale-105">
-                  Kolleksiya
+                 <Link to={"/catalog"}>
+                 <button className="bg-gradient-to-r from-emerald-500 to-emerald-700 text-white px-4 py-2 rounded-full text-sm font-medium hover:from-blue-700 hover:to-purple-700 transition-all transform hover:scale-105">
+                  Sotib Olish
                 </button>
+                 </Link>
               </div>
             </div>
           </div>
