@@ -56,16 +56,6 @@ const Card = () => {
               <p className="text-gray-600 text-sm mb-4">
                 {product.description}
               </p>
-              <div className="flex justify-between items-center">
-                <span className="text-lg font-bold text-blue-700">
-                  {product.price}
-                </span>
-                 <Link to={"/catalog"}>
-                 <button className="bg-gradient-to-r from-emerald-500 to-emerald-700 text-white px-4 py-2 rounded-full text-sm font-medium hover:from-blue-700 hover:to-purple-700 transition-all transform hover:scale-105">
-                  Sotib Olish
-                </button>
-                 </Link>
-              </div>
             </div>
           </div>
         ))}

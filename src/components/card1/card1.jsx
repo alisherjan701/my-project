@@ -37,7 +37,7 @@ const items = [
   {
     id: 9,
     img: "https://i.pinimg.com/1200x/24/3a/49/243a49021bf2d06cc4d2ad6d3bbd0705.jpg",
-  }
+  },
 ];
 
 const CardItem = ({ id, img, liked, onLike }) => {
@@ -71,10 +71,7 @@ const CardItem = ({ id, img, liked, onLike }) => {
         <p className="text-gray-700 text-sm mb-2">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </p>
-        <p className="text-lg font-bold text-blue-700">{price} | 5.0 ★</p>
       </div>
-
-     
     </div>
   );
 };

@@ -2,13 +2,15 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer  id="contact" className="bg-gray-900 text-gray-300 py-12 px-6">
+    <footer id="contact" className="bg-gray-900 text-gray-300 py-12 px-6">
       <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         <div>
-          <h2 className="text-2xl font-bold text-white mb-4">GulchehraDrawer</h2>
+          <h2 className="text-2xl font-bold text-white mb-4">
+            GulchehraDrawer
+          </h2>
           <p className="text-sm">
-          Modaning so'nggi tendentsiyalarini kashf eting va bizning yangiligimizdan ilhom oling
-            uslublar.
+            Modaning so'nggi tendentsiyalarini kashf eting va bizning
+            yangiligimizdan ilhom oling uslublar.
           </p>
         </div>
 

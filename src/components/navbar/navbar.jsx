@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ShoppingBag, Menu, X } from "lucide-react";
 import { Link as ScrollLink } from "react-scroll";
 import { navLinks } from "../../constants";
@@ -12,7 +12,9 @@ function Navbar() {
       <nav className="sticky top-0 z-50 w-full bg-[#C2EFD4] px-4 py-3 shadow-lg">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <Link to="/">
-            <h1 className="text-[#224F34] font-bold text-2xl md:text-3xl">GulchehraDrawer</h1>
+            <h1 className="text-[#224F34] font-bold text-2xl md:text-3xl">
+              GulchehraDrawer
+            </h1>
           </Link>
 
           <div className="hidden md:flex items-center ml-[490px] gap-10">
@@ -48,7 +50,11 @@ function Navbar() {
 
           <div className="md:hidden">
             <button onClick={() => setMenuOpen(!menuOpen)}>
-              {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {menuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
             </button>
           </div>
         </div>
