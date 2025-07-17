@@ -25,11 +25,6 @@ const Footer = () => {
                 Katalog
               </a>
             </li>
-            <li>
-              <a href="/shop" className="hover:text-white transition">
-                 Bozor
-              </a>
-            </li>
           </ul>
         </div>
 

@@ -15,7 +15,7 @@ function Navbar() {
             <h1 className="text-[#224F34] font-bold text-2xl md:text-3xl">GulchehraDrawer</h1>
           </Link>
 
-          <div className="hidden md:flex items-center gap-10">
+          <div className="hidden md:flex items-center ml-[490px] gap-10">
             {navLinks.map((nav) =>
               nav.scroll ? (
                 <ScrollLink
@@ -40,14 +40,9 @@ function Navbar() {
             )}
           </div>
 
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden md:flex mr-[40px] items-center gap-6">
             <Link to="/catalog">
               <ShoppingBag className="text-green-800 cursor-pointer w-6 h-6" />
-            </Link>
-            <Link to="/admin">
-              <button className="text-sm font-semibold border-green-900 px-4 py-2 rounded text-[#224F34] hover:bg-green-900 hover:text-white transition">
-                Admin Panelga Kirish
-              </button>
             </Link>
           </div>
 
