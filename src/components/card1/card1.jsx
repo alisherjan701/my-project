@@ -5,7 +5,7 @@ const items = [
   {
     id: 1,
     img: "https://i.pinimg.com/736x/45/a4/fa/45a4fa8bf3c7726fa87ecb661787b1b5.jpg",
-    title: "An'anaviy Atlas Ko'ylak",
+    title: "Anc'anaviyaa Atlas Ko'ylak",
     description:
       "Yuqori sifatli atlas matosidan tayyorlangan, kundalik kiyim uchun mos.",
   },
