@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const cards = [
   {
     img: "https://i.pinimg.com/1200x/10/3a/bc/103abcf45150b3726f4283fe21f4af3a.jpg",
-    title: "Romantik A-Line Ko'ylak",
+    title: "Romantik dddddA-Line Ko'ylak",
     description:
       "Pastel rang, beldan tor, keng yubkali, yozgi bayramlar uchun mos.",
   },
